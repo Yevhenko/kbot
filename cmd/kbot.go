@@ -1,18 +1,16 @@
 /*
 Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
 	"fmt"
-	"time"
-	"os"
 	"log"
+	"os"
+	"time"
 
 	"github.com/spf13/cobra"
 	telebot "gopkg.in/telebot.v3"
-
 )
 
 var (
@@ -21,9 +19,9 @@ var (
 
 // kbotCmd represents the kbot command
 var kbotCmd = &cobra.Command{
-	Use:   "kbot",
+	Use:     "kbot",
 	Aliases: []string{"start"},
-	Short: "A brief description of your command",
+	Short:   "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
@@ -34,16 +32,16 @@ to quickly create a Cobra application.`,
 		fmt.Printf("kbot started")
 
 		kbot, err := telebot.NewBot(telebot.Settings{
-			URL: "",
-			Token: TeleToken,
+			URL:    "",
+			Token:  TeleToken,
 			Poller: &telebot.LongPoller{Timeout: 10 * time.Second},
 		})
-	
+
 		if err != nil {
 			log.Fatalf("error", err)
 			return
 		}
-	
+
 		kbot.Handle(telebot.OnText, func(m telebot.Context) error {
 			log.Print(m.Message().Payload, m.Text())
 
@@ -55,9 +53,9 @@ to quickly create a Cobra application.`,
 
 			}
 
-			return err;
+			return err
 		})
-	
+
 		kbot.Start()
 	},
 }
