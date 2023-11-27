@@ -21,7 +21,8 @@ push:
 
 clean:
 	rm -rf kbot
-	docker rmi ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH}
+	IMG1=$$(docker images -q | head -n 1); \
+	if [ -n "$${IMG1}" ]; then  docker rmi -f $${IMG1}; else printf "$RImage not found$D\n"; fi
 
 linux: format get
 	CGO_ENABLED=0 GOOS=arm GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/Yevhenko/kbot/cmd.appVersion=${VERSION}
