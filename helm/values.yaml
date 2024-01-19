@@ -2,7 +2,6 @@ image:
   repository: yevhensvyrydov
   tag: "v1.1.0-51ed738"
   arch: amd64
-# Додатково визначте секцію для токену TELE_TOKEN
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
