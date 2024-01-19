@@ -17,7 +17,7 @@ image:
 	docker build . -t ${REGESTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
 
 push:
-	docker push ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker push ${REGESTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
 
 test:
 	go test -v
