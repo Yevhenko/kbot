@@ -2,7 +2,7 @@ image:
   registry: "ghcr.io"
   repository: "yevhenko/kbot"
   pullPolicy: IfNotPresent
-  tag: "v1.3.0-7083bb7"
+  tag: "v1.3.0-804397e"
   os: linux
   arch: amd64
 secret:
