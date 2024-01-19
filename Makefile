@@ -1,5 +1,5 @@
 APP=$(shell basename $(shell git remote get-url origin))
-REGESTRY=yevhensvyrydov
+REGESTRY=ghcr.io/yevhenko
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 TARGETARCH=amd64
@@ -18,6 +18,9 @@ image:
 
 push:
 	docker push ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH}
+
+test:
+	go test -v
 
 clean:
 	rm -rf kbot
