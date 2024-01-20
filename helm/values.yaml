@@ -1,8 +1,8 @@
 image:
   registry: "ghcr.io"
-  repository: "yevhenko/kbot.git"
+  repository: "yevhenko/kbot"
   pullPolicy: IfNotPresent
-  tag: "v1.3.0-ab52d2a"
+  tag: "v1.3.0-804397e"
   os: linux
   arch: amd64
 secret:
