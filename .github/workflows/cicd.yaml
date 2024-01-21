@@ -5,6 +5,10 @@ on:
     branches:
       - develop
 
+env:
+  TARGETOS: linux
+  TARGETARCH: amd64
+
 jobs:
   ci:
     name: CI
