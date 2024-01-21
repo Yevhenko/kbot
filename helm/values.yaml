@@ -2,9 +2,9 @@ image:
   registry: "ghcr.io"
   repository: "yevhenko/kbot"
   pullPolicy: IfNotPresent
-  tag: "v1.3.0-9950e33"
-  os: ""
-  arch: ""
+  tag: "v1.3.0-887864e"
+  os: "linux"
+  arch: "amd64"
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
